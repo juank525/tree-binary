@@ -25,6 +25,15 @@ public class TreeBinaryServiceImpl implements TreeBinaryService {
 	 */
 	@Override
 	public Node createTree(TreeRequest treeRequest) {
+
+		if (Objects.isNull(treeRequest.getRoot())) {
+			throw new TreeException("Debe enviar el root");
+		}
+
+		if (Objects.isNull(treeRequest.getNodes()) || treeRequest.getNodes().isEmpty()) {
+			throw new TreeException("Debe enviar informacion de los nodos");
+		}
+
 		Node root = new Node(treeRequest.getRoot());
 		treeRequest.getNodes().stream().forEach(value -> fillTree(root, value));
 		Tree.setNode(root);

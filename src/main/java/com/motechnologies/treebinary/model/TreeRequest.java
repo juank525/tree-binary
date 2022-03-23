@@ -12,6 +12,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TreeRequest {
-	private int root;
+	private Integer root;
 	private List<Integer> nodes;
 }
