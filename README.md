@@ -15,7 +15,15 @@ En las siguientes URL se puede consultar la documentación de los servicios
 - https://tree-binary-test.herokuapp.com/v2/api-docs
 - https://tree-binary-test.herokuapp.com/swagger-ui.html
 
-Url de la colección de postman para realizar el consumo y pruebas de los servicios, seleccionar el enviroment env-tree-binary
+Url de la colección de postman para realizar consumo y pruebas de los servicios, seleccionar el enviroment env-tree-binary
 
 - https://www.postman.com/redesposicionadas/workspace/test-mo-technologies/overview
+
+- Primero consumir el endpoint /tree-binary para la creación del árbol binario, curl de ejemplo: 
+  - curl --location --request POST 'https://tree-binary-test.herokuapp.com/tree-binary' --header 'Content-Type: application/json' --data-raw '{
+    "root" : 67,
+    "nodes":[39,28,44,29,76,74,85,83,87]
+}'
+- Segundo consumir el endpoint /lowest-common-ancestor para obtener el ancestro común más cercano, curl de ejemplo:
+  - curl --location --request GET 'https://tree-binary-test.herokuapp.com/lowest-common-ancestor?nodeOne=44&nodeTwo=28' --data-raw ''
 
